@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="angular.min.js">
+
+    </script>
+  </head>
+  <body ng-app="myNgApp">
+  <div ng-controller="parentController">
+    controller name: {{controllerName}} <br>
+    message: {{message}} <br>
+    <div style="margin: 10px 0px 10px 20px;" ng-controller="childController">
+      controller Name: {{controllerName}} <br>
+      message: {{message}} <br>
+    </div>
+   </div>
+   <div class="" ng-controller="siblingController">
+     controller name: {{controllerName}} <br>
+     message: {{message}} <br>
+   </div>
+   <script type="text/javascript">
+     var ngApp = angular.module('myNgApp',[]);
+     ngApp.controller('parentController',function($scope,$rootScope){
+       $scope.controllerName = "parentController";
+       $rootScope.message = "hello world"
+     });
+     ngApp.controller('childController',function($scope){
+       $scope.controllerName="childController";
+     });
+     ngApp.controller('siblingController',function($scope){
+    
+     });
+   </script>
+  </body>
+</html

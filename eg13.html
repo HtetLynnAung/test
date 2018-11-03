@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="angular.min.js">
+
+    </script>
+  </head>
+  <body ng-app="myNgApp">
+  <div ng-controller="myController">
+    enter Message : <input type="text" ng-model="message" name="" value="">
+    new Message: {{newMessage}}<br>
+    old message: {{oldMessage}}
+  </div>
+  <script type="text/javascript">
+    var ngApp = angular.module('myNgApp',[]);
+    ngApp.controller('myController',function($scope){
+      $scope.message = "hello world";
+      $scope.$watch('message',function(newValue,oldValue){
+        $scope.newMessage = newValue;
+        $scope.oldMessage = oldValue;
+      });
+    });
+  </script>
+  </body>
+</html

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="angular.min.js">
+    </script>
+    <style media="screen">
+      .redDiv{
+        width: 100px;
+        height: 100px;
+        background: red;
+        padding: 2px;
+      }
+      .yellowDiv{
+        width: 100px;
+        height: 100px;
+        background: yellow;
+        padding: 2px;
+      }
+
+    </style>
+  </head>
+  <body ng-app>
+    <div ng-class="{redDiv:enter,yellowDiv:leave}" ng-mouseenter="enter=true;leave=false;" ng-mouseleave="leave=true;enter=false;">
+      mouse<span ng-show="enter">enter</span><span ng-show="leave">leave</span>
+
+    </div>
+  </body>
+</html

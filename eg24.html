@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script type="text/javascript" src="googleAPI.angular.min.js">
+    </script>
+  </head>
+  <body ng-app="myApp">
+    <div class="">
+      <div class="" ng-controller="myController">
+        Default currency: {{person.salary | currency}}<br>
+        Default currency: {{person.salary | currency:'$':0}}<br>
+        Custom currency identifier: {{person.salary| currency:'Rs.':5}}<br>
+        Default currency: {{person.salary| currency: 'Rs.':0}}<br>
+        Default currency: {{person.salary| currency: 'GBP.':2}}<br>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var myApp = angular.module('myApp',[]);
+      myApp.controller("myController",function($scope){
+        $scope.person = {firstName:'James',lastName:'Bonds',salary:100 000}
+      });
+    </script>
+  </body>
+</html

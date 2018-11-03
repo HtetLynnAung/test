@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="angular.min.js">
+
+    </script>
+  </head>
+  <body ng-app="myNgApp">
+    <div class="" ng-controller="parentController">
+      Message: {{message1}}
+      <div class="" ng-controller="childController">
+        ParentMessage: {{message1}}<br>
+        Child Message: {{message2}}
+      </div>
+      Child Message: {{message2}}
+    </div>
+    <script type="text/javascript">
+      var ngApp=angular.module('myNgApp',[]);
+      ngApp.controller('parentController',function($scope){
+        $scope.message1="this is parentController."
+      });
+      ngApp.controller('childController',function($scope){
+        $scope.message2="this is childController."
+      });
+
+    </script>
+  </body>
+</html

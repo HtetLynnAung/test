@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="angular.min.js">
+
+    </script>
+    <style media="screen">
+      div{
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body ng-app ng-init="students=['bill','steve','ram']">
+    <ol>
+      <li ng-repeat="result in students">{{result}}</li>
+    </ol>
+    <div ng-repeat="result in students">
+      {{result}}
+    </div>
+  </body>
+</html>

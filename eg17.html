@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="googleAPI.angular.min.js"></script>
+    <script type="text/javascript" src="angular.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div class="">
+      <div class="" ng-controller="myController">
+        Response: {{data}}<br>Error: {{error}}
+      </div>
+    </div>
+    <script type="text/javascript">
+      var myApp = angular.module('myApp',[]);
+      myApp.controller("myController",function($scope,$http){
+        var onsuccess = function(data,status,headers,config){
+          $scope.data = data;
+        };
+        var onError = function(data,status,headers,config){
+          $scope.error = status;
+        }
+        var promise = $http.get("eg1.html").success(onsuccess).error(onError);
+        promise.success(onsuccess);
+        promise.error(onError);
+      });
+    </script>
+  </body>
+</html

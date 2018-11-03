@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="angular.min.js">
+
+    </script>
+  </head>
+  <body ng-app="myApp">
+    <div ng-controller="myController">
+      Enter Password: <input type="password" ng-model="password" name="" value="">
+      <button type="button" ng-click="DisplayMessage(password)" name="button">show Password</button>
+    </div>
+    <script type="text/javascript">
+      var myApp = angular.module('myApp',[]);
+      myApp.controller("myController",function($scope,$window){
+        $scope.DisplayMessage = function(value){
+          $window.alert(value)
+        }
+      })
+    </script>
+  </body>
+</html

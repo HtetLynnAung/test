@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="googleAPI.angular.min.js">
+    <script type="text/javascript" src="js/assig2Contoller.js"></script>
+    </script>
+    <link rel="stylesheet" href="css/hla.css">
+  </head>
+  <body ng-app="myApp">
+    <div class="container" ng-controller="myController">
+      <div class="count">
+        Total Items:  {{count}}
+      </div><br>
+      <div class="">
+        Enter Item Name: <input type="text" ng-model="searchCriteria">
+        <select class="" ng-model="orderList">
+          <option value="title">By name</option>
+          <option value="price">By Price</option>
+        </select>
+      </div>
+      <div class="item_container" ng-repeat="item in items | filter:result | orderBy: orderList">
+        <div class="item_title">
+          {{item.title}}
+        </div>
+        <img src="{{item.image}}" alt="{{item.title}}" width="200px" height="130px">
+        <button class="get_item" ng-click="buy()">
+          {{item.price}}
+        </button>
+      </div>
+      <div ng-show="!(itmes ).length">
+          No matching data found
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    var myapp = angular.module("myApp",[]);
+
+    myapp.controller("myController",function($scope,$window){
+      $scope.items=[{title:'Item1',image:'img1.jpg',price:9000},
+                    {title:'Item2',image:'img1.jpg',price:10000},
+                    {title:'Item3',image:'img1.jpg',price:10000},
+                    {title:'Item4',image:'img1.jpg',price:8000},
+                    {title:'Item5',image:'img1.jpg',price:10000},
+                    {title:'Item6',image:'img1.jpg',price:10000},
+                    {title:'Item6',image:'img1.jpg',price:10000},
+                    {title:'Item6',image:'img1.jpg',price:10000},
+                    {title:'Item6',image:'img1.jpg',price:10000},
+                    {title:'Item6',image:'img1.jpg',price:18000},
+                    {title:'Item6',image:'img1.jpg',price:15000},
+                    {title:'Item6',image:'img1.jpg',price:11000},
+                    {title:'zzztem6',image:'img1.jpg',price:12000},
+                    {title:'Item6',image:'img1.jpg',price:10000},
+                    {title:'Item6',image:'img1.jpg',price:10000}];
+    Object.defineProperty($scope,"result",{
+      get:function(){
+        var out = {};
+        out[$scope.orderList || "$"] = $scope.searchCriteria;
+        return out;
+      }
+    });
+
+    $scope.count=0;
+
+    $scope.buy=function(){
+      $scope.count = $scope.count+1;
+    }
+    });
+
+    </script>
+  </body>
+</html>

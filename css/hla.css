@@ -1,0 +1,48 @@
+.item_container{
+  border: 1px solid gray;
+  border-radius: 3px;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  position: relative !important;
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: 30px;
+}
+.container{
+  position: absolute;
+  margin-top: 10px;
+  margin: 0 auto;
+  display: block;
+  padding: 0px 5rem 2rem 7rem;
+  border: 1px solid red;
+}
+.item_title{
+  position: relative;
+  display: block;
+  margin-top: 0;
+  align: center;
+  margin-bottom: 4px;
+  color: #000;
+  margin-left: 5px;
+}
+.count{
+  position: relative;
+  font-size: 20px;
+  float: right !important;
+}
+.get_item{
+  width: 100px;
+  height: 30px;
+  outline: none;
+  border: 1px solid #fff;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  background: gray;
+  border-radius: 3px;
+  color: #fff;
+}
+.get_item:hover{
+  background: black;
+}
